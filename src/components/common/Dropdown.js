@@ -12,7 +12,7 @@ import {
   ButtonText,
 } from "@gluestack-ui/themed";
 
-const Dropdown = ({ subtypes }) => {
+const Dropdown = ({ subtypes, onSelectSubtype }) => {
   const [showActionsheet, setShowActionsheet] = useState(false);
   const [selectedSubtype, setSelectedSubtype] = useState(null);
 
@@ -20,6 +20,7 @@ const Dropdown = ({ subtypes }) => {
 
   const handleSubtypeSelect = (subtype) => {
     setSelectedSubtype(subtype);
+    onSelectSubtype(subtype);
     setShowActionsheet(false);
   };
 
